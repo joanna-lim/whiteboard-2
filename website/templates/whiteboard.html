@@ -5,47 +5,58 @@ content %}
     text-align: center;
     font-weight: normal;
   }
-  div {
+  .d {
     margin: 30px;
   }
   canvas {
     border: 1px solid gray;
   }
-  .b {
+  .b1 {
     background-color: whitesmoke;
     color: rgb(74, 74, 74);
     border-radius: 8px;
     transition-duration: 0.4s;
   }
-  .b:hover{
+  .b2 {
+    background-color: whitesmoke;
+    color: rgb(74, 74, 74);
+    border-radius: 8px;
+    transition-duration: 0.4s;
+  }
+  .b1:hover {
     background-color: rgb(245, 206, 201);
-    color:rgb(29, 29, 29)
+    color: rgb(29, 29, 29);
+  }
+  .b2:hover {
+    background-color: rgb(201, 245, 208);
+    color: rgb(29, 29, 29);
   }
 </style>
 <body>
+<br />
   <h2 class="h">Hello {{user.first_name}}!</h2>
   <h1 class="h">This is a Whiteboard</h1>
-  <div>
+  <div class="d">
     <p>
       Set width (default 300)
       <input type="text" onchange="setWidth(this.value)" />
     </p>
   </div>
 
-  <div>
+  <div class="d">
     <p>
       Set height (default 150)
       <input type="text" onchange="setHeight(this.value)" />
     </p>
   </div>
 
-  <div>
+  <div class="d">
     <p>
       Brush colour
       <input type="color" value="#000" onchange="changeColor(this.value)" />
     </p>
   </div>
-  <div>
+  <div class="d">
     <p>Brush size</p>
     <p>
       <input
@@ -60,8 +71,9 @@ content %}
     </p>
   </div>
 
-  <div style="text-align: center">
+  <div style="text-align: center" class="d">
     <canvas
+      name="canvas1"
       id="canvas1"
       onmousedown="startPaint()"
       onmousemove="doPaint(event.offsetX,event.offsetY)"
@@ -70,14 +82,18 @@ content %}
     </canvas>
   </div>
 
-  <div style="text-align: center">
+  <div style="text-align: center" class="d">
     <input
       type="button"
-      class = "b"
+      class="b1"
       id="clear"
       value="Clear canvas"
       onclick="clearCanvas()"
     />
+<form method="POST">
+    <button id="save" name="save" class="b2" onclick="saveCanvas()"> Save canvas </button>
+</form>
+
   </div>
   <script type="text/javascript" src="static/whiteboard.js"></script>
 </body>

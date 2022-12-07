@@ -14,3 +14,10 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(150))
     first_name = db.Column(db.String(150))
     notes = db.relationship('Note')
+    drawings = db.relationship('Drawing')
+
+class Drawing(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    data = db.Column(db.String())
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+

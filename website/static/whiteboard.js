@@ -54,3 +54,9 @@ function resizeBrush(newSize) {
   radius=newSize;
   document.getElementById("sizeOutput").value=newSize
 }
+
+function saveCanvas(){
+  var canvas = document.getElementById("canvas1");
+  const data = canvas.toDataURL();
+  document.getElementById("save").value = data;
+}
