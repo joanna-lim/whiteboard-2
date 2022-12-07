@@ -1,15 +1,24 @@
-# whiteboard app with flask
+# Whiteboard App with Flask
 
-## Features
-- User authentication
-- Interactive whiteboard application
-- Users can save, delete, and view their drawings
+## Technologies Used
+- Client-side: HTML, CSS, JS
+- Server-side: Python with Flask
+- Database: SQL (with SQLAlchemy as ORM)
 
 ## How to use
-Run the main Python file in the terminal, i.e.
+Install the app by cloning the repo into your local machine:
+``` bash
+git clone <repo-url>
+```
+To run the app:
 ``` bash
 python3 main.py
 ```
+
+## Features
+- User authentication
+- Interactive whiteboard with different board sizes, brush sizes and colours
+- Users can save, delete or view past drawings across different login sessions
 
 ## Credits
 I followed a YouTube tutorial pick up the basics of Flask, before integrating it with a Whiteboard project I made quite a while ago.
