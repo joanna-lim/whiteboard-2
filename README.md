@@ -5,7 +5,7 @@
 - Server-side: Python with Flask
 - Database: SQL (with SQLAlchemy as ORM)
 
-## How to use
+## How to Use
 Install the app by cloning the repo into your local machine:
 ``` bash
 git clone <repo-url>
