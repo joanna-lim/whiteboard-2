@@ -1,0 +1,85 @@
+{% extends "base.html" %} {% block title %}Whiteboard{% endblock %} {% block
+content %}
+<style>
+  .h {
+    text-align: center;
+    font-weight: normal;
+  }
+  div {
+    margin: 30px;
+  }
+  canvas {
+    border: 1px solid gray;
+  }
+  .b {
+    background-color: whitesmoke;
+    color: rgb(74, 74, 74);
+    border-radius: 8px;
+    transition-duration: 0.4s;
+  }
+  .b:hover{
+    background-color: rgb(245, 206, 201);
+    color:rgb(29, 29, 29)
+  }
+</style>
+<body>
+  <h2 class="h">Hello {{user.first_name}}!</h2>
+  <h1 class="h">This is a Whiteboard</h1>
+  <div>
+    <p>
+      Set width (default 300)
+      <input type="text" onchange="setWidth(this.value)" />
+    </p>
+  </div>
+
+  <div>
+    <p>
+      Set height (default 150)
+      <input type="text" onchange="setHeight(this.value)" />
+    </p>
+  </div>
+
+  <div>
+    <p>
+      Brush colour
+      <input type="color" value="#000" onchange="changeColor(this.value)" />
+    </p>
+  </div>
+  <div>
+    <p>Brush size</p>
+    <p>
+      <input
+        type="range"
+        id="sizeInput"
+        min="1"
+        max="20"
+        value="10"
+        oninput="resizeBrush(this.value)"
+      />
+      <output id="sizeOutput"> 10 </output>
+    </p>
+  </div>
+
+  <div style="text-align: center">
+    <canvas
+      id="canvas1"
+      onmousedown="startPaint()"
+      onmousemove="doPaint(event.offsetX,event.offsetY)"
+      onmouseup="endPaint()"
+    >
+    </canvas>
+  </div>
+
+  <div style="text-align: center">
+    <input
+      type="button"
+      class = "b"
+      id="clear"
+      value="Clear canvas"
+      onclick="clearCanvas()"
+    />
+  </div>
+  <script type="text/javascript" src="static/whiteboard.js"></script>
+</body>
+
+{% endblock %}
