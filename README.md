@@ -3,7 +3,6 @@
 ## Technologies Used
 - Client-side: HTML, CSS, JS
 - Server-side: Python with Flask
-- Database: SQL (with SQLAlchemy as ORM)
 
 ## How to Use
 Install the app by cloning the repo into your local machine:
