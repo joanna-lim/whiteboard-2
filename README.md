@@ -9,7 +9,7 @@ Install the app by cloning the repo into your local machine:
 ``` bash
 git clone <repo-url>
 ```
-`cd ..`
+
 To run the app:
 ``` bash
 python3 main.py
